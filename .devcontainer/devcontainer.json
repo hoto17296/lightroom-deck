@@ -1,0 +1,11 @@
+{
+  "name": "lightroom-controller-webui",
+  "dockerComposeFile": ["compose.yaml", "compose.env.yaml"],
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  }
+}
