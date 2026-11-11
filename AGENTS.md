@@ -19,7 +19,7 @@ Stack: React 19 + TypeScript + Vite, Bun as package manager/runtime, CSS Modules
 | File | Role |
 |---|---|
 | `src/lightroom.ts` | `LightroomClient`: WebSocket, `register` (pairing), request/response matching by `requestId`, `getValue`, `adjust` |
-| `src/useLightroom.ts` | Hook: connect/disconnect, 1 s polling of all params, write path (`setValue`, `nudge`) |
+| `src/useLightroom.ts` | Hook: connect/disconnect, 1 s polling of all params (paused while the tab is hidden), write path (`setValue`, `nudge`) |
 | `src/sync.ts` | Pure write algorithm: move a value to a target with relative `increment`/`decrement` calls, learning the amount ratio |
 | `src/navigation.ts` | Pure arrow-key focus movement over the column layout |
 | `src/params.ts` | **Slider definitions** (API key, labels, column, range, step, default, display format, track gradient) and the Temperature→Kelvin table |

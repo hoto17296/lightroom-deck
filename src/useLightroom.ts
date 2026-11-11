@@ -69,11 +69,25 @@ export function useLightroom() {
       });
       setValues((prev) => ({ ...prev, ...update }));
     };
-    poll();
-    const id = setInterval(poll, POLL_MS);
+    // Poll only while the tab is visible; refresh immediately when it becomes visible again.
+    let id: ReturnType<typeof setInterval> | undefined;
+    const start = () => {
+      if (id !== undefined) return;
+      poll();
+      id = setInterval(poll, POLL_MS);
+    };
+    const stop = () => {
+      clearInterval(id);
+      id = undefined;
+    };
+    const onVisibilityChange = () => (document.hidden ? stop() : start());
+
+    if (!document.hidden) start();
+    document.addEventListener("visibilitychange", onVisibilityChange);
     return () => {
       cancelled = true;
-      clearInterval(id);
+      stop();
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, [status]);
 
