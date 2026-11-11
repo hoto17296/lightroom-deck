@@ -1,0 +1,105 @@
+.slider {
+  --thumb-size: 20px;
+  --track-height: 3px;
+  position: relative;
+  padding: 0.7rem 0.9rem 0.6rem;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  transition: background-color 0.1s;
+}
+
+.slider[data-focused] {
+  background: var(--surface-focus);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.slider[data-disabled] {
+  opacity: 0.4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.2rem;
+}
+
+.header label {
+  font-size: 1rem;
+}
+
+.slider[data-focused] .header label {
+  color: var(--text-strong);
+}
+
+.header output {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.input {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: var(--thumb-size);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.input:disabled {
+  cursor: default;
+}
+
+.input:focus {
+  outline: none;
+}
+
+/* Track */
+.input::-webkit-slider-runnable-track {
+  height: var(--track-height);
+  border-radius: var(--track-height);
+  background: var(--track);
+}
+
+.input::-moz-range-track {
+  height: var(--track-height);
+  border-radius: var(--track-height);
+  background: var(--track);
+}
+
+/* Thumb: hollow ring, blue when the slider is focused */
+.input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  margin-top: calc((var(--track-height) - var(--thumb-size)) / 2);
+  border: 3px solid var(--thumb);
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.input::-moz-range-thumb {
+  box-sizing: border-box;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border: 3px solid var(--thumb);
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.slider[data-focused] .input::-webkit-slider-thumb {
+  border-color: var(--accent);
+  background: var(--surface-focus);
+}
+
+.slider[data-focused] .input::-moz-range-thumb {
+  border-color: var(--accent);
+  background: var(--surface-focus);
+}
