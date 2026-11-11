@@ -1,4 +1,33 @@
 {
   "version": "2.0.0",
-  "tasks": []
+  "tasks": [
+    {
+      "label": "Start dev servers",
+      "dependsOn": ["lightroom-controller", "vite"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "lightroom-controller",
+      "type": "shell",
+      "command": "bunx --bun lightroom-controller",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "group": "dev",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "vite",
+      "type": "shell",
+      "command": "bunx vite --host",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "group": "dev",
+        "panel": "dedicated"
+      }
+    }
+  ]
 }

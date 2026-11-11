@@ -4,3 +4,5 @@ services:
     command: sleep infinity
     volumes:
       - ..:/workspace
+    environment:
+      LIGHTROOM_WS_URL: ws://host.docker.internal:7682
