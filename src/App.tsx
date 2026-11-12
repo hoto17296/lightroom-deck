@@ -10,11 +10,7 @@ function Intro() {
     return (
       <article className={styles.intro}>
         <h1>Lightroom Deck</h1>
-        <p>
-          このアプリは、Adobe Lightroom
-          の「外部コントローラー」機能を使って、現像スライダーをブラウザから操作するためのツールです。
-          キーボードやマウスホイールで、露光量や色温度などを細かく調整できます。
-        </p>
+        <p>デスクトップ版 Adobe Lightroom を操作する Web アプリ</p>
         <img
           className={styles.diagram}
           src={diagramUrl}
@@ -24,21 +20,20 @@ function Intro() {
         <ol>
           <li>
             Lightroom の「環境設定 &gt;
-            インターフェイス」で「外部コントローラーを有効にする」をオンにします。
+            インターフェイス」で「外部コントローラーを有効にする」をオンにする
           </li>
           <li>
-            右上の「Lightroom と接続」を押し、Lightroom
-            に表示されるダイアログで「ペアリング」を押します。
+            右上の「Lightroom と接続」を押し、Lightroom に表示されるダイアログで「ペアリング」を押す
           </li>
-          <li>Lightroom で写真を1枚開くと、スライダーが表示されます。</li>
+          <li>Lightroom 側では写真を選択して「ディティール」モードに切り替える</li>
         </ol>
         <h2>操作方法</h2>
         <ul>
-          <li>スライダーにマウスを重ねる、または矢印キーで項目を選択します。</li>
+          <li>スライダーにマウスを重ねる、または矢印キーで項目を選択する</li>
           <li>
-            マウスホイール、または <kbd>+</kbd> / <kbd>-</kbd> キーで値を増減します。
+            マウスホイール、または <kbd>+</kbd> / <kbd>-</kbd> キーで値を増減できる
           </li>
-          <li>スライダーをダブルクリックすると初期値に戻ります。</li>
+          <li>スライダーをダブルクリックすると初期値に戻る</li>
         </ul>
         <h2>免責事項</h2>
         <p className={styles.disclaimer}>
@@ -53,10 +48,7 @@ function Intro() {
   return (
     <article className={styles.intro}>
       <h1>Lightroom Deck</h1>
-      <p>
-        This app uses Adobe Lightroom’s external controller feature to operate develop sliders from
-        a web browser. Fine-tune exposure, white balance and more with your keyboard or mouse wheel.
-      </p>
+      <p>A web app for controlling Adobe Lightroom for desktop</p>
       <img
         className={styles.diagram}
         src={diagramUrl}
@@ -65,21 +57,21 @@ function Intro() {
       <h2>Getting started</h2>
       <ol>
         <li>
-          In Lightroom, enable “Enable external controllers” under Preferences &gt; Interface.
+          In Lightroom, turn on “Enable external controllers” under Preferences &gt; Interface
         </li>
         <li>
           Click “Connect to Lightroom” at the top right, then click “Pair” in the dialog shown by
-          Lightroom.
+          Lightroom
         </li>
-        <li>Open a single photo in Lightroom and the sliders will appear.</li>
+        <li>In Lightroom, select a photo and switch to Detail view</li>
       </ol>
       <h2>Controls</h2>
       <ul>
-        <li>Hover over a slider or use the arrow keys to select it.</li>
+        <li>Hover over a slider, or use the arrow keys, to select it</li>
         <li>
-          Use the mouse wheel or the <kbd>+</kbd> / <kbd>-</kbd> keys to change its value.
+          Use the mouse wheel or the <kbd>+</kbd> / <kbd>-</kbd> keys to change its value
         </li>
-        <li>Double-click a slider to reset it to its default.</li>
+        <li>Double-click a slider to reset it to its default</li>
       </ul>
       <h2>Disclaimer</h2>
       <p className={styles.disclaimer}>
