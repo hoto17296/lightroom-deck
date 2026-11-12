@@ -46,7 +46,7 @@ To add a slider, add an entry to `PARAMS` in `src/params.ts`. Check the paramete
   - Mouse hover focuses a slider.
   - Up/Down move through the slider list in order, continuing into the next column. Left/Right jump to the same row in the adjacent column.
 - Changing values: `+`/`=` and `-`/`_` keys, or the mouse wheel over a slider (wheel down = increase; page scrolling is suppressed). Dragging also works.
-- Double-click resets to `defaultValue`. Temperature has no reset (see protocol notes).
+- Double-click or `Esc` (on the focused slider) resets to `defaultValue`. Temperature has no reset (see protocol notes).
 - Slider labels follow the Japanese Lightroom UI wording (`ja`) and the English Lightroom UI wording (`en`). "Straighten" is unverified.
 
 ## Lightroom External Controller API notes (found by experiment, not documented by Adobe)

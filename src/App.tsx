@@ -33,7 +33,9 @@ function Intro() {
           <li>
             マウスホイール、または <kbd>+</kbd> / <kbd>-</kbd> キーで値を増減できる
           </li>
-          <li>スライダーをダブルクリックすると初期値に戻る</li>
+          <li>
+            スライダーをダブルクリック、または <kbd>Esc</kbd> キーで初期値に戻る
+          </li>
         </ul>
         <h2>免責事項</h2>
         <p className={styles.disclaimer}>
@@ -71,7 +73,9 @@ function Intro() {
         <li>
           Use the mouse wheel or the <kbd>+</kbd> / <kbd>-</kbd> keys to change its value
         </li>
-        <li>Double-click a slider to reset it to its default</li>
+        <li>
+          Double-click a slider or press <kbd>Esc</kbd> to reset it to its default
+        </li>
       </ul>
       <h2>Disclaimer</h2>
       <p className={styles.disclaimer}>

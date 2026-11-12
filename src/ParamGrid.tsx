@@ -24,16 +24,25 @@ export function ParamGrid({ values, setValue, nudge, setDragging }: Props) {
   const gridRef = useRef<HTMLDivElement>(null);
 
   // Latest callbacks/state for the native listeners below.
-  const latest = useRef({ focused, nudge });
+  const latest = useRef({ focused, nudge, setValue });
   useEffect(() => {
-    latest.current = { focused, nudge };
+    latest.current = { focused, nudge, setValue };
   });
 
-  // Keyboard: arrows move focus, +/- change the focused value.
+  // Keyboard: arrows move focus, +/- change the focused value, Esc resets it.
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey) return;
-      const { focused, nudge } = latest.current;
+      const { focused, nudge, setValue } = latest.current;
+      if (e.key === "Escape") {
+        const p = byKey.get(focused)!;
+        // Params without a known default (Temperature) are left unchanged.
+        if (p.defaultValue !== undefined) {
+          e.preventDefault();
+          setValue(p, p.defaultValue);
+        }
+        return;
+      }
       if (e.key.startsWith("Arrow")) {
         // Also stops native range inputs from handling arrows and the page from scrolling.
         e.preventDefault();
