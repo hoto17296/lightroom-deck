@@ -1,5 +1,6 @@
 import { lang, messages, t } from "./i18n.ts";
 import { ParamGrid } from "./ParamGrid.tsx";
+import diagramUrl from "./public/architecture.drawio.png";
 import { useLightroom } from "./useLightroom.ts";
 
 import styles from "./App.module.css";
@@ -14,6 +15,11 @@ function Intro() {
           の「外部コントローラー」機能を使って、現像スライダーをブラウザから操作するためのツールです。
           キーボードやマウスホイールで、露光量や色温度などを細かく調整できます。
         </p>
+        <img
+          className={styles.diagram}
+          src={diagramUrl}
+          alt="構成図: このコンピューター上で、Web ブラウザ内の Lightroom Deck が WebSocket（ws://localhost:7682）で Lightroom デスクトップ版の外部コントローラー API に接続する"
+        />
         <h2>使い方</h2>
         <ol>
           <li>
@@ -51,6 +57,11 @@ function Intro() {
         This app uses Adobe Lightroom’s external controller feature to operate develop sliders from
         a web browser. Fine-tune exposure, white balance and more with your keyboard or mouse wheel.
       </p>
+      <img
+        className={styles.diagram}
+        src={diagramUrl}
+        alt="Architecture: on your computer, Lightroom Deck in the web browser connects over WebSocket (ws://localhost:7682) to the External Controller API of Lightroom (desktop)"
+      />
       <h2>Getting started</h2>
       <ol>
         <li>

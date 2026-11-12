@@ -7,7 +7,7 @@
   "postCreateCommand": "bun install",
   "customizations": {
     "vscode": {
-      "extensions": ["oxc.oxc-vscode"]
+      "extensions": ["hediet.vscode-drawio", "oxc.oxc-vscode"]
     }
   }
 }
